@@ -155,6 +155,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-ghost-koi:hover{background:var(--koi);color:#fff;border-color:var(--koi)}
   @media(max-width:640px){.connect{grid-template-columns:1fr}}
 
+  /* LEAD FORM — gửi thẳng về Gmail */
+  .lead-form{position:relative;max-width:560px;margin:8px auto 4px;background:var(--panel);border-radius:18px;padding:26px 24px 22px;text-align:left;box-shadow:0 26px 60px -30px rgba(0,0,0,.72)}
+  .lead-form h3{color:var(--ink);font-size:20px;font-weight:900;text-align:center;margin-bottom:4px}
+  .lead-form .lf-sub{color:var(--ink-soft);font-size:13.5px;text-align:center;margin:0 auto 18px;max-width:430px}
+  .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .lf-field{margin-bottom:12px}
+  .lf-field label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:5px}
+  .lf-field input,.lf-field textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:#fbfaf6;font:inherit;font-size:14.5px;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+  .lf-field input:focus,.lf-field textarea:focus{outline:none;border-color:var(--green-2);box-shadow:0 0 0 3px rgba(63,138,88,.15)}
+  .lf-field textarea{resize:vertical;min-height:74px}
+  .lead-form .btn{width:100%;justify-content:center;margin-top:4px}
+  .lf-hp{position:absolute;left:-9999px;top:0;height:0;width:0;opacity:0;overflow:hidden}
+  .lf-msg{display:none;text-align:center;font-size:14px;font-weight:700;padding:11px;border-radius:10px;margin-top:10px}
+  .lf-msg.ok{display:block;background:rgba(63,138,88,.12);color:var(--green)}
+  .lf-msg.err{display:block;background:rgba(224,89,43,.12);color:var(--koi)}
+  .lead-form .lf-privacy{color:var(--muted);font-size:11.5px;text-align:center;margin-top:12px}
+  @media(max-width:640px){.lf-row{grid-template-columns:1fr}}
+
   footer.site{background:var(--bg-2);color:var(--muted-d);padding:32px 0;text-align:center;font-size:13.5px;border-top:1px solid var(--line-d)}
   footer.site a{color:var(--gold-2)}
 
@@ -368,6 +386,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <h2>Kết nối với tôi</h2>
     <p>Nhắn riêng để hỏi về cá Koi và cái hồ của bạn — hoặc vào nhóm Zalo cộng đồng để cùng học hỏi mỗi ngày.</p>
+
+    <form class="lead-form" id="leadForm" novalidate>
+      <h3>Để lại thông tin — tôi liên hệ lại</h3>
+      <p class="lf-sub">Vài dòng về cái hồ / con cá bạn đang quan tâm. Thông tin gửi thẳng về hộp thư của tôi, tôi xem và liên hệ lại trực tiếp.</p>
+      <div class="lf-row">
+        <div class="lf-field">
+          <label for="lf-name">Họ và tên</label>
+          <input id="lf-name" name="name" type="text" placeholder="Tên của bạn" autocomplete="name" required>
+        </div>
+        <div class="lf-field">
+          <label for="lf-phone">Số điện thoại / Zalo</label>
+          <input id="lf-phone" name="phone" type="tel" inputmode="tel" placeholder="Số để tôi liên hệ" autocomplete="tel" required>
+        </div>
+      </div>
+      <div class="lf-field">
+        <label for="lf-message">Bạn đang quan tâm điều gì? <span style="font-weight:500;color:var(--muted)">(không bắt buộc)</span></label>
+        <textarea id="lf-message" name="message" placeholder="Ví dụ: hồ 5 khối mới làm, muốn chọn vài em Koi cho người mới chơi..."></textarea>
+      </div>
+      <input class="lf-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-koi" type="submit" id="lf-submit">Gửi cho Đỗ Thanh Long →</button>
+      <div class="lf-msg" id="lf-result" role="status" aria-live="polite"></div>
+      <p class="lf-privacy">🔒 Thông tin gửi thẳng về hộp thư của tôi — không chia sẻ cho bên thứ ba.</p>
+    </form>
+
     <div class="connect">
       <div class="connect-col">
         <div class="cc-ic">💬</div>
@@ -410,6 +452,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if(!clean){ e.preventDefault(); alert("⚠️ Chưa cấu hình số Zalo.\nMở index.html, điền số vào dòng: var ZALO_NUMBER = \"...\";"); }
         });
       }
+    });
+  })();
+
+  // ====== FORM LEAD → EMAIL (FormSubmit.co, không cần backend) ======
+  (function(){
+    var form = document.getElementById('leadForm');
+    if(!form) return;
+    var btn = document.getElementById('lf-submit');
+    var out = document.getElementById('lf-result');
+    // Gửi thẳng về hộp thư long.do.1272101@gmail.com qua FormSubmit (AJAX, giữ khách ở lại trang)
+    var ENDPOINT = "https://formsubmit.co/ajax/long.do.1272101@gmail.com";
+    function show(type, msg){ out.className = 'lf-msg ' + type; out.textContent = msg; }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(form._honey && form._honey.value){ return; } // bot rơi vào bẫy honeypot
+      var name = form.name.value.trim();
+      var phone = form.phone.value.trim();
+      if(!name || !phone){ show('err','Vui lòng nhập họ tên và số điện thoại.'); return; }
+      var oldTxt = btn.textContent; btn.disabled = true; btn.textContent = 'Đang gửi...';
+      try{ window.dataLayer = window.dataLayer || []; window.dataLayer.push({event:'lead_submit', form:'do-thanh-long-la-ai'}); }catch(_e){}
+      fetch(ENDPOINT, {
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          message: form.message.value.trim(),
+          _subject: 'Lead moi tu trang "Do Thanh Long la ai"',
+          _template: 'table'
+        })
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(){ show('ok','✅ Đã gửi! Cảm ơn bạn — tôi sẽ liên hệ lại sớm nhất.'); form.reset(); })
+      .catch(function(){ show('err','Có lỗi khi gửi. Bạn nhắn giúp tôi qua nút Zalo bên dưới nhé.'); })
+      .finally(function(){ btn.disabled = false; btn.textContent = oldTxt; });
     });
   })();
 </script>
