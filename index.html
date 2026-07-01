@@ -136,7 +136,17 @@
   .cta-band{background:radial-gradient(700px 320px at 50% 0%,rgba(224,89,43,.18),transparent 70%),var(--bg);color:var(--cream);text-align:center}
   .cta-band h2{font-size:clamp(26px,3.4vw,40px);font-weight:900;max-width:720px;margin:0 auto 14px}
   .cta-band p{color:var(--muted-d);max-width:560px;margin:0 auto 26px}
-  .cta-band .note{color:var(--muted);font-size:12.5px;margin-top:16px}
+  .cta-band .note{color:var(--muted);font-size:12.5px;margin-top:18px}
+  .connect{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:780px;margin:28px auto 0;text-align:center}
+  .connect-col{background:rgba(255,255,255,.05);border:1px solid var(--line-d);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;align-items:center}
+  .connect-col .cc-ic{font-size:34px;margin-bottom:8px}
+  .connect-col h3{color:var(--cream);font-size:17.5px;margin-bottom:6px}
+  .connect-col p{color:var(--muted-d);font-size:13.5px;margin:0 auto 16px;max-width:none}
+  .connect-col .qr{width:172px;height:172px;border-radius:12px;margin:0 auto 14px;background:#fff;padding:9px;box-shadow:0 12px 26px -12px rgba(0,0,0,.6)}
+  .connect-col .btn{margin-top:auto}
+  .btn-ghost-koi{border:1px solid var(--koi-2);color:var(--koi-2);background:transparent}
+  .btn-ghost-koi:hover{background:var(--koi);color:#fff;border-color:var(--koi)}
+  @media(max-width:640px){.connect{grid-template-columns:1fr}}
 
   footer.site{background:var(--bg-2);color:var(--muted-d);padding:32px 0;text-align:center;font-size:13.5px;border-top:1px solid var(--line-d)}
   footer.site a{color:var(--gold-2)}
@@ -345,9 +355,22 @@
 <!-- CTA CUỐI -->
 <section class="cta-band" id="lien-he">
   <div class="wrap">
-    <h2>Nếu bạn thấy ở tôi một người làm thật, nói thật</h2>
-    <p>…hãy nhắn cho tôi một câu. Về cá Koi, về cái hồ của bạn, hay chỉ để làm quen — tôi luôn sẵn lòng.</p>
-    <a class="btn btn-koi js-zalo" style="padding:17px 40px;font-size:17px"><span class="zico">Z</span> Nhắn Zalo cho Đỗ Thanh Long</a>
+    <h2>Kết nối với tôi</h2>
+    <p>Nhắn riêng để hỏi về cá Koi và cái hồ của bạn — hoặc vào nhóm Zalo cộng đồng để cùng học hỏi mỗi ngày.</p>
+    <div class="connect">
+      <div class="connect-col">
+        <div class="cc-ic">💬</div>
+        <h3>Nhắn riêng cho tôi</h3>
+        <p>Hỏi trực tiếp Đỗ Thanh Long — tôi trả lời, không qua trung gian.</p>
+        <a class="btn btn-koi js-zalo"><span class="zico">Z</span> Nhắn Zalo cho tôi</a>
+      </div>
+      <div class="connect-col">
+        <img class="qr" src="assets/zalo-group-qr.png" alt="Mã QR nhóm Zalo Linh Long Koi Farm chia sẻ" onerror="this.style.display='none'">
+        <h3>Nhóm Zalo: Linh Long Koi Farm chia sẻ</h3>
+        <p>Quét mã QR hoặc bấm nút để vào cộng đồng người chơi Koi.</p>
+        <a class="btn btn-ghost-koi" href="https://zalo.me/g/h95kspmcozc4fyeney6j" target="_blank" rel="noopener">Tham gia nhóm Zalo →</a>
+      </div>
+    </div>
     <div class="note">🔒 Tôi trả lời trực tiếp. Không spam, không làm phiền bạn.</div>
   </div>
 </section>
