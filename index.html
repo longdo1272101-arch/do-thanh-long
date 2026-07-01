@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<!-- Google Tag Manager — liên thông đo lường với email long.do.1272101@gmail.com -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -461,8 +461,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(!form) return;
     var btn = document.getElementById('lf-submit');
     var out = document.getElementById('lf-result');
-    // Gửi thẳng về hộp thư long.do.1272101@gmail.com qua FormSubmit (AJAX, giữ khách ở lại trang)
-    var ENDPOINT = "https://formsubmit.co/ajax/long.do.1272101@gmail.com";
+    // Gửi thẳng về hộp thư của chủ trang qua FormSubmit (AJAX, giữ khách ở lại trang).
+    // Dùng chuỗi alias FormSubmit để KHÔNG lộ email trong mã nguồn.
+    var ENDPOINT = "https://formsubmit.co/ajax/992f9ff07785eaa2836b443ea7c723b9";
     function show(type, msg){ out.className = 'lf-msg ' + type; out.textContent = msg; }
     form.addEventListener('submit', function(e){
       e.preventDefault();
