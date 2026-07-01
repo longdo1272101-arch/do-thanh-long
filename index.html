@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Đỗ Thanh Long là ai? — Người bán cá Koi bằng sự thật | Linh Long Koi Farm</title>
+<meta name="description" content="Đỗ Thanh Long — chủ trại cá Koi Nhật Linh Long Koi Farm (Gia Kiệm, Đồng Nai). Người bán cá Koi bằng sự thật: nói cả cái đẹp lẫn rủi ro để bạn nuôi cá yên tâm." />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Đỗ Thanh Long là ai?" />
+<meta property="og:description" content="Người bán cá Koi bằng sự thật — Linh Long Koi Farm, Gia Kiệm, Đồng Nai." />
+<meta property="og:image" content="assets/hero-portrait.jpg" />
+
+<style>
+  :root{
+    --bg:#0f1512; --bg-2:#141b17; --cream:#f6f1e8; --cream-2:#efe9db;
+    --panel:#ffffff; --green:#2f6d46; --green-2:#3f8a58;
+    --gold:#c9a24b; --gold-2:#e3c477; --gold-soft:rgba(201,162,75,.14);
+    --koi:#e0592b; --koi-2:#f0743f; /* đỏ-cam Koi cho nút CTA */
+    --ink:#20241f; --ink-soft:#4c5148; --muted:#8d9488; --muted-d:#a7b0a3;
+    --line:rgba(0,0,0,.10); --line-d:rgba(255,255,255,.10); --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(15,21,18,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-d)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .nav .logo{color:var(--cream);font-weight:800;letter-spacing:.5px}
+  .nav .logo b{color:var(--gold-2)}
+  .nav .links{display:flex;gap:22px}
+  .nav .links a{color:var(--muted-d);font-size:14px;font-weight:600}
+  .nav .links a:hover{color:var(--gold-2)}
+  .nav .cta{background:linear-gradient(135deg,var(--koi),var(--koi-2));color:#fff;padding:9px 18px;border-radius:999px;font-weight:800;font-size:13px}
+  @media(max-width:820px){.nav .links{display:none}}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 28px;border-radius:12px;font-weight:800;font-size:15.5px;cursor:pointer;border:none;transition:transform .12s, box-shadow .2s}
+  .btn-koi{background:linear-gradient(135deg,var(--koi),var(--koi-2));color:#fff;box-shadow:0 16px 34px -14px rgba(224,89,43,.7)}
+  .btn-koi:hover{transform:translateY(-2px);box-shadow:0 22px 40px -14px rgba(224,89,43,.85)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.28);color:var(--cream)}
+  .btn .zico{width:22px;height:22px;border-radius:6px;background:#fff;color:var(--koi);font-weight:900;font-size:13px;display:grid;place-items:center}
+
+  /* HERO */
+  .hero{background:radial-gradient(900px 500px at 80% -10%,rgba(201,162,75,.18),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg-2));color:var(--cream);padding:64px 0 72px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold-2);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(201,162,75,.35);background:var(--gold-soft);padding:7px 14px;border-radius:999px;margin-bottom:20px}
+  .hero h1{font-size:clamp(30px,4.6vw,52px);line-height:1.08;font-weight:900;letter-spacing:-.5px}
+  .hero h1 .g{color:var(--gold-2)}
+  .hero .sub{color:var(--muted-d);font-size:clamp(15.5px,1.7vw,18.5px);margin:20px 0 22px;max-width:540px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+  .chips span{font-size:13px;color:var(--cream);background:rgba(255,255,255,.07);border:1px solid var(--line-d);padding:7px 13px;border-radius:999px}
+  .chips span::before{content:"✓ ";color:var(--gold-2)}
+  .actions{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-photo{position:relative}
+  .hero-photo img{width:100%;border-radius:18px;aspect-ratio:4/5;object-fit:cover;border:1px solid rgba(201,162,75,.35);box-shadow:0 40px 80px -30px rgba(0,0,0,.85)}
+  .hero-photo .badge{position:absolute;left:-16px;bottom:22px;background:var(--panel);color:var(--ink);border-radius:14px;padding:13px 17px;box-shadow:0 20px 40px -18px rgba(0,0,0,.5)}
+  .hero-photo .badge b{display:block;font-size:20px;color:var(--green)}
+  .hero-photo .badge span{font-size:12px;color:var(--muted)}
+  .photo-fallback{width:100%;aspect-ratio:4/5;border-radius:18px;background:linear-gradient(160deg,#25382c,#16211a);display:grid;place-items:center;color:var(--muted-d);text-align:center;padding:20px;font-size:13px;border:1px solid rgba(201,162,75,.3)}
+
+  /* SECTION */
+  section{padding:60px 0}
+  .kicker{color:var(--green);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:12px;margin-bottom:11px}
+  h2.title{font-size:clamp(25px,3.3vw,38px);font-weight:900;letter-spacing:-.5px;line-height:1.14}
+  .lead{color:var(--ink-soft);font-size:16.5px;margin-top:13px;max-width:720px}
+  .center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+
+  /* TRUST BAR */
+  .stats{background:var(--bg);color:var(--cream);padding:40px 0}
+  .stats .row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:center}
+  .stats .n{font-size:clamp(26px,3.6vw,40px);font-weight:900;color:var(--gold-2)}
+  .stats .l{color:var(--muted-d);font-size:13.5px;margin-top:5px}
+
+  /* INTRO / STORY 2 cột */
+  .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+  .split.rev{grid-template-columns:1.1fr .9fr}
+  .split img,.split .photo-fallback{border-radius:16px;aspect-ratio:4/5;object-fit:cover}
+  .split p{color:var(--ink-soft);font-size:16px;margin-top:13px}
+  .split p+p{margin-top:12px}
+
+  /* TIMELINE */
+  .timeline{max-width:780px;margin:34px auto 0;position:relative}
+  .timeline::before{content:"";position:absolute;left:18px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),transparent)}
+  .tl-item{position:relative;padding:0 0 24px 56px}
+  .tl-item .dot{position:absolute;left:9px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px var(--gold-soft)}
+  .tl-item .yr{font-weight:900;color:var(--green);font-size:14.5px}
+  .tl-item h4{font-size:18px;margin:2px 0 4px}
+  .tl-item p{color:var(--ink-soft);font-size:15px}
+
+  /* DOMAINS */
+  .domains{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+  .domain{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.2s}
+  .domain:hover{transform:translateY(-4px);box-shadow:0 24px 44px -26px rgba(0,0,0,.32);border-color:rgba(201,162,75,.5)}
+  .domain .ic{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;background:var(--gold-soft);border:1px solid rgba(201,162,75,.4);font-size:26px;margin-bottom:13px}
+  .domain h3{font-size:19px;margin-bottom:6px}
+  .domain p{color:var(--ink-soft);font-size:14.5px}
+
+  /* PROOF (Nhật) */
+  .proof{background:var(--cream-2)}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .pcard img,.pcard .photo-fallback{aspect-ratio:4/3;object-fit:cover;border-radius:0}
+  .pcard .cap{padding:14px 16px;font-size:14px;color:var(--ink-soft)}
+
+  /* PHILO */
+  .philo{background:var(--green);color:#eaf3ec;text-align:center}
+  .philo blockquote{font-family:Georgia,serif;font-style:italic;font-size:clamp(22px,3vw,33px);line-height:1.3;max-width:840px;margin:0 auto}
+  .philo .by{margin-top:16px;color:rgba(255,255,255,.75);font-size:15px}
+
+  /* HELP */
+  .help-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .help{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .help .ic{font-size:28px;margin-bottom:9px}
+  .help h4{font-size:17px;margin-bottom:6px}
+  .help p{color:var(--ink-soft);font-size:14.5px}
+  .help a{color:var(--koi);font-weight:700;font-size:14px;display:inline-block;margin-top:10px}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+  .gallery img,.gallery .photo-fallback{aspect-ratio:1;object-fit:cover;border-radius:12px}
+  @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+  /* FAQ */
+  .faq{max-width:800px;margin:28px auto 0}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  details summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  details summary::after{content:"+";color:var(--koi);font-weight:900}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--ink-soft);margin-top:10px;font-size:15px}
+
+  /* CTA cuối */
+  .cta-band{background:radial-gradient(700px 320px at 50% 0%,rgba(224,89,43,.18),transparent 70%),var(--bg);color:var(--cream);text-align:center}
+  .cta-band h2{font-size:clamp(26px,3.4vw,40px);font-weight:900;max-width:720px;margin:0 auto 14px}
+  .cta-band p{color:var(--muted-d);max-width:560px;margin:0 auto 26px}
+  .cta-band .note{color:var(--muted);font-size:12.5px;margin-top:16px}
+
+  footer.site{background:var(--bg-2);color:var(--muted-d);padding:32px 0;text-align:center;font-size:13.5px;border-top:1px solid var(--line-d)}
+  footer.site a{color:var(--gold-2)}
+
+  @media(max-width:820px){
+    .hero-grid,.split,.split.rev{grid-template-columns:1fr;gap:30px}
+    .hero-photo{max-width:340px;margin:0 auto}
+    .stats .row{grid-template-columns:repeat(2,1fr);gap:24px}
+    .domains,.help-list,.proof-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">ĐỖ THANH <b>LONG</b></a>
+    <nav class="links">
+      <a href="#la-ai">Tôi là ai</a>
+      <a href="#hanh-trinh">Hành trình</a>
+      <a href="#linh-vuc">Lĩnh vực</a>
+      <a href="#nhat-ban">Chuyến Nhật</a>
+      <a href="#giup-gi">Tôi giúp gì</a>
+    </nav>
+    <a href="#lien-he" class="cta js-zalo">Nhắn Zalo</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">● Đỗ Thanh Long — Linh Long Koi Farm · Gia Kiệm, Đồng Nai</span>
+      <h1>Tôi bán cá Koi <span class="g">bằng sự thật</span> — nói cả cái đẹp lẫn cái rủi ro</h1>
+      <p class="sub">7 năm theo nghề cá Koi Nhật, từng sang tận trại bên Nhật lội ao chọn cá. Tôi không hứa hão — tôi giúp bạn chọn đúng con cá, chăm đúng nền nước, để đồng tiền bạn bỏ ra không phí.</p>
+      <div class="chips">
+        <span>Trại Koi Nhật · Gia Kiệm, Đồng Nai</span>
+        <span>Đã sang Nhật lội ao chọn cá</span>
+        <span>100+ Koi đang nuôi</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-koi js-zalo"><span class="zico">Z</span> Nhắn Zalo cho tôi</a>
+        <a class="btn btn-ghost" href="#la-ai">Nghe câu chuyện của tôi ↓</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/portrait-2.jpg" alt="Đỗ Thanh Long — Linh Long Koi Farm" onerror="this.outerHTML='&lt;div class=\'photo-fallback\'&gt;[assets/portrait-2.jpg]&lt;/div&gt;'">
+      <div class="badge"><b>100+ Koi</b><span>đang chăm mỗi ngày</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="stats">
+  <div class="wrap">
+    <div class="row">
+      <div><div class="n">7 năm</div><div class="l">theo nghề cá Koi Nhật</div></div>
+      <div><div class="n">100+</div><div class="l">chú Koi đang chăm</div></div>
+      <div><div class="n">3 kỳ</div><div class="l">Koi Show Việt Nam</div></div>
+      <div><div class="n">50%+</div><div class="l">cá mang thi đoạt giải</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TÔI LÀ AI -->
+<section id="la-ai">
+  <div class="wrap split">
+    <img src="assets/koi-holding.jpg" alt="Đỗ Thanh Long cầm cá Koi" onerror="this.outerHTML='&lt;div class=\'photo-fallback\'&gt;[koi-holding.jpg]&lt;/div&gt;'">
+    <div>
+      <div class="kicker">Tôi là ai</div>
+      <h2 class="title">Người đứng sau Linh Long Koi Farm</h2>
+      <p>Tôi là Đỗ Thanh Long, chủ trại cá Koi Nhật Linh Long Koi Farm ở Gia Kiệm, Đồng Nai. Công việc mỗi ngày của tôi rất giản dị: chọn cá, chăm nước, và ngồi lại tư vấn cho những người mê Koi như bạn. Cá Koi tôi nhập từ Nhật về, tự tay tuyển từng con; nước hồ, nền hồ, cám, khoáng, vi sinh — thứ nào tôi cũng làm thật, dùng thật rồi mới bán.</p>
+      <p>Tôi tin một điều đơn giản: thương hiệu phải xây bằng sự thật. Con cá nào đẹp tôi nói đẹp, con nào có tật tôi chỉ thẳng cái tật. Hồ của bạn đang ổn thì tôi nói thẳng là chưa cần mua thêm gì. Tôi không cam kết cá "chắc chắn lên hàng", không hứa lời lãi — vì cá là sinh thể sống, không ai dám chắc 100%. Cái tôi chắc được là làm đúng, nói thật, và ở lại lâu dài với bạn.</p>
+      <p>Với tôi, nuôi cá Koi là nuôi nước. Nước tốt thì cá khỏe, cá khỏe thì mới lên form, lên màu, lên thần thái. Nghe thì gọn vậy thôi, nhưng để hiểu được câu đó tôi đã đi một quãng đường dài — có cả những lần trả giá.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CÂU CHUYỆN -->
+<section id="cau-chuyen" style="background:var(--cream-2)">
+  <div class="wrap split rev">
+    <div>
+      <div class="kicker">Câu chuyện của tôi</div>
+      <h2 class="title">Buổi chiều bên ao cá ở Nhật đã đổi cách tôi làm nghề</h2>
+      <p>Có một buổi tôi đứng ở một nhà vườn Koi bên Nhật, nhìn một người nghệ nhân già lội xuống ao, đưa tay xuống nước, rồi nhấc lên một con cá. Ông không cân, không đo. Ông chỉ nhìn — nhìn cái dáng cá lượn, nhìn nước da, nhìn cái "thần" của nó — rồi gật đầu. Cả đời ông gói lại trong một cái nhìn đó.</p>
+      <p>Tôi đứng nhìn và tự nói với mình: nghề này không phải nghề bán cá. Đây là nghề đọc cá — và trước hết là nghề nuôi nước. Ở đó tôi còn học được một thứ không sách nào dạy: sự tử tế trong nghề. Người Nhật nói thật về con cá, cái nào đẹp thì khen, cái nào lỗi thì chỉ thẳng. Tôi mang tinh thần đó về Việt Nam.</p>
+      <p>Vì thế tôi chọn cách làm mà tôi gọi là <b>"xây thương hiệu bằng sự thật"</b>. Nếu hồ của bạn đang ổn, tôi sẽ nói thẳng là chưa cần mua thêm gì. Con cá là sinh thể sống — không ai dám bảo đảm 100%. Cái tôi bảo đảm được là mình làm thật và nói thật. Đó là lý do bạn đang đọc trang này.</p>
+    </div>
+    <img src="assets/koi-farm-selfie.jpg" alt="Đỗ Thanh Long bên hồ Koi tại Nhật" onerror="this.outerHTML='&lt;div class=\'photo-fallback\'&gt;[koi-farm-selfie.jpg]&lt;/div&gt;'">
+  </div>
+</section>
+
+<!-- HÀNH TRÌNH -->
+<section id="hanh-trinh">
+  <div class="wrap center">
+    <div class="kicker">Hành trình</div>
+    <h2 class="title">Những cột mốc làm nên tôi hôm nay</h2>
+  </div>
+  <div class="wrap">
+    <div class="timeline">
+      <div class="tl-item"><div class="dot"></div><div class="yr">Bén duyên</div><h4>Bước vào nghề cá Koi Nhật</h4><p>Tôi đến với con cá Koi như người ta mê một thứ đẹp — rồi mê thì phải hiểu, hiểu rồi thì phải làm cho tới. Bắt đầu từ cái gốc: nuôi nước, nuôi nền hồ trước khi nuôi cá.</p></div>
+      <div class="tl-item"><div class="dot"></div><div class="yr">Bước ngoặt</div><h4>Sang Nhật học nghề tận gốc</h4><p>Tôi vào tận nhà vườn Koi, chụp hình cùng nông dân Nhật, tự tay lội ao bắt Koi jumbo, dự Koi Show — học cách người Nhật chọn và đọc cá.</p></div>
+      <div class="tl-item"><div class="dot"></div><div class="yr">Gây dựng</div><h4>Lập Linh Long Koi Farm tại Gia Kiệm, Đồng Nai</h4><p>Tôi tuyển và nhập cá Koi Japan về Việt Nam, và đến nay đang chăm hơn 100 chú Koi bằng đúng cái tâm học được từ nghề.</p></div>
+      <div class="tl-item"><div class="dot"></div><div class="yr">Cọ xát</div><h4>Mang cá đi Koi Show Việt Nam</h4><p>Tôi mang cá đi thi 3 kỳ Koi Show trong nước, hơn 50% số cá mang đi đoạt giải. Đi thi không phải để khoe — mà để đo tay nghề mình với người trong nghề.</p></div>
+      <div class="tl-item"><div class="dot"></div><div class="yr">2026 — Nay</div><h4>Làm nghề bài bản hơn, đi đường dài</h4><p>Tôi hệ thống hóa cách làm, đưa cái tâm "làm thật nói thật" thành cách vận hành — và bắt đầu những hành trình mới như FARMILY, đưa trẻ thành phố về vườn.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LĨNH VỰC -->
+<section id="linh-vuc" style="background:var(--cream-2)">
+  <div class="wrap center">
+    <div class="kicker">Lĩnh vực</div>
+    <h2 class="title">Những thế giới tôi đang sống cùng</h2>
+    <p class="lead">Tôi không giỏi kể về mình. Nên tôi kể bằng những việc tôi đang làm mỗi ngày.</p>
+  </div>
+  <div class="wrap">
+    <div class="domains">
+      <div class="domain"><div class="ic">🐟</div><h3>Cá Koi Nhật — Linh Long Koi Farm</h3><p>Đây là nghề tôi sống bằng, ở Gia Kiệm – Đồng Nai. Tôi chọn cá, đọc form, đọc màu, học từ chính người Nhật cách nhìn một con Koi. Trước khi nói chuyện bán cá, tôi hay nói chuyện cái hồ của bạn trước.</p></div>
+      <div class="domain"><div class="ic">🌱</div><h3>FARMILY — Nông trại online</h3><p>Hành trình tôi đang xây, chưa phải thứ đã xong: người thành phố có mảnh vườn thật ở quê, chăm qua điện thoại, cuối tuần đưa con về ăn rau sạch mình trồng. Tôi tin trẻ con cần được chạm tay vào đất.</p></div>
+      <div class="domain"><div class="ic">🦅</div><h3>Kinh doanh &amp; tư duy Đại Bàng</h3><p>Tôi từng chỉ nghĩ mình là người bán cá. Rồi tôi đi học tư duy làm hệ thống ở Eagle Camp, học cách xây thương hiệu bằng sự thật và dựng quy trình. Tôi vẫn đang học và áp dụng mỗi ngày.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MINH CHỨNG NHẬT -->
+<section class="proof" id="nhat-ban">
+  <div class="wrap center">
+    <div class="kicker">Học tận gốc</div>
+    <h2 class="title">Tôi không học nghề qua sách — tôi sang tận Nhật</h2>
+    <p class="lead">Tôi lội xuống ao, đứng cạnh người nghệ nhân, đi Koi Show để học cách họ chọn và đọc cá. Đây là vài khoảnh khắc thật trên hành trình đó.</p>
+  </div>
+  <div class="wrap">
+    <div class="proof-grid">
+      <div class="pcard"><img src="assets/with-farmer-1.jpg" alt="Đỗ Thanh Long cùng nông dân Nhật bên thau Koi" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:4/3\'&gt;[with-farmer-1.jpg]&lt;/div&gt;'"><div class="cap">Đứng cùng người nông dân Nhật bên thau Koi vừa bắt — học cách họ chọn cá bằng con mắt cả đời trong nghề.</div></div>
+      <div class="pcard"><img src="assets/nagaoka-koi-show.jpg" alt="Cầm cúp tại Koi Show Nagaoka" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:4/3\'&gt;[nagaoka-koi-show.jpg]&lt;/div&gt;'"><div class="cap">Dự Triển lãm Koi Nagaoka — đến tận nơi để hiểu một con cá đẹp thật sự trông như thế nào.</div></div>
+      <div class="pcard"><img src="assets/cheers-artisan.jpg" alt="Cùng nghệ nhân Nhật" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:4/3\'&gt;[cheers-artisan.jpg]&lt;/div&gt;'"><div class="cap">Ngồi lại cùng nghệ nhân Nhật — thứ tôi mang về không chỉ là cá, mà là cách làm nghề tử tế.</div></div>
+    </div>
+    <div class="center" style="margin-top:34px">
+      <a class="btn btn-koi js-zalo"><span class="zico">Z</span> Nhắn Zalo hỏi tôi về cá Koi</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRIẾT LÝ -->
+<section class="philo">
+  <div class="wrap">
+    <blockquote>“Nuôi cá Koi là nuôi nước — và xây thương hiệu bằng sự thật.”</blockquote>
+    <div class="by">— Đỗ Thanh Long</div>
+  </div>
+</section>
+
+<!-- TÔI GIÚP GÌ -->
+<section id="giup-gi">
+  <div class="wrap center">
+    <div class="kicker">Tôi giúp được gì cho bạn</div>
+    <h2 class="title">Nếu con đường của tôi có ích cho bạn…</h2>
+  </div>
+  <div class="wrap">
+    <div class="help-list">
+      <div class="help"><div class="ic">🐟</div><h4>Người chơi &amp; nuôi Koi</h4><p>Bạn sợ mua hớ, sợ cá về xuống phong độ, sợ nước hỏng? Tôi giúp bạn chọn đúng con cá và chăm đúng nền nước — nói thẳng cả cái được lẫn cái rủi ro.</p><a class="js-zalo" href="#lien-he">Nhắn Zalo cho tôi →</a></div>
+      <div class="help"><div class="ic">👨‍👩‍👧</div><h4>Gia đình thành phố</h4><p>Muốn con được chạm tay vào đất, ăn rau sạch mình trồng? Đó là điều tôi đang xây với FARMILY, và sẵn lòng chia sẻ với bạn từ những bước đầu.</p><a class="js-zalo" href="#lien-he">Nhắn Zalo cho tôi →</a></div>
+      <div class="help"><div class="ic">🚀</div><h4>Người đang kinh doanh</h4><p>Muốn làm nghề tử tế mà vẫn lớn được? Tôi chia sẻ cách tôi xây thương hiệu bằng sự thật và dựng hệ thống từ con số không.</p><a class="js-zalo" href="#lien-he">Nhắn Zalo cho tôi →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section style="background:var(--cream-2)">
+  <div class="wrap center">
+    <div class="kicker">Đời thật</div>
+    <h2 class="title">Vài khoảnh khắc trên đường đi</h2>
+  </div>
+  <div class="wrap">
+    <div class="gallery">
+      <img src="assets/hero-portrait.jpg" alt="" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:1\'&gt;[hero-portrait]&lt;/div&gt;'">
+      <img src="assets/with-farmer-2.jpg" alt="" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:1\'&gt;[with-farmer-2]&lt;/div&gt;'">
+      <img src="assets/koi-farm-selfie.jpg" alt="" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:1\'&gt;[koi-farm-selfie]&lt;/div&gt;'">
+      <img src="assets/nagaoka-koi-show.jpg" alt="" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:1\'&gt;[nagaoka]&lt;/div&gt;'">
+      <img src="assets/bonsai-pine.jpg" alt="" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:1\'&gt;[bonsai-pine]&lt;/div&gt;'">
+      <img src="assets/greeting-couple.jpg" alt="" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:1\'&gt;[greeting-couple]&lt;/div&gt;'">
+      <img src="assets/portrait-3.jpg" alt="" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:1\'&gt;[portrait-3]&lt;/div&gt;'">
+      <img src="assets/cheers-artisan.jpg" alt="" onerror="this.outerHTML='&lt;div class=\'photo-fallback\' style=\'aspect-ratio:1\'&gt;[cheers-artisan]&lt;/div&gt;'">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap center">
+    <div class="kicker">Câu hỏi thường gặp</div>
+    <h2 class="title">Bạn có thể đang thắc mắc</h2>
+  </div>
+  <div class="wrap">
+    <div class="faq">
+      <details open><summary>Đỗ Thanh Long là ai?</summary><p>Tôi là chủ trại cá Koi Nhật Linh Long Koi Farm ở Gia Kiệm, Đồng Nai. Tôi theo nghề cá Koi, từng sang Nhật học cách chọn và đọc cá, và làm nghề theo tinh thần "xây thương hiệu bằng sự thật".</p></details>
+      <details><summary>Trại của anh ở đâu, có ghé xem cá được không?</summary><p>Trại ở Gia Kiệm, Đồng Nai. Bạn hoàn toàn có thể hẹn ghé xem cá tận nơi — nhắn Zalo cho tôi để mình sắp lịch.</p></details>
+      <details><summary>Anh tư vấn những gì?</summary><p>Chọn cá Koi, xử lý nước và nền hồ, cách chăm để cá lên form lên màu. Ngoài ra tôi cũng sẵn lòng chia sẻ về FARMILY (nông trại cho gia đình) và cách làm kinh doanh tử tế.</p></details>
+      <details><summary>Người mới chơi Koi hỏi anh được không?</summary><p>Rất hoan nghênh. Tôi thích nói chuyện cái hồ của bạn trước khi nói chuyện bán cá — người mới càng nên hỏi kỹ để khỏi mua hớ.</p></details>
+      <details><summary>Làm sao liên hệ anh nhanh nhất?</summary><p>Nhắn Zalo cho tôi ở nút bên dưới. Tôi trả lời trực tiếp, không qua trung gian.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA CUỐI -->
+<section class="cta-band" id="lien-he">
+  <div class="wrap">
+    <h2>Nếu bạn thấy ở tôi một người làm thật, nói thật</h2>
+    <p>…hãy nhắn cho tôi một câu. Về cá Koi, về cái hồ của bạn, hay chỉ để làm quen — tôi luôn sẵn lòng.</p>
+    <a class="btn btn-koi js-zalo" style="padding:17px 40px;font-size:17px"><span class="zico">Z</span> Nhắn Zalo cho Đỗ Thanh Long</a>
+    <div class="note">🔒 Tôi trả lời trực tiếp. Không spam, không làm phiền bạn.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 <b>Đỗ Thanh Long</b> — Linh Long Koi Farm · Gia Kiệm, Đồng Nai.</p>
+    <p style="margin-top:6px">Xây thương hiệu bằng sự thật · <a href="#top">Về đầu trang</a></p>
+  </div>
+</footer>
+
+<script>
+  // ====== CẤU HÌNH ZALO — CHỖ DUY NHẤT CẦN SỬA ======
+  // Điền số Zalo THẬT của anh Long vào đây (ví dụ "0905251968"), mọi nút Zalo sẽ tự chạy.
+  var ZALO_NUMBER = "";
+  // ===================================================
+  (function(){
+    var links = document.querySelectorAll('.js-zalo');
+    var clean = ZALO_NUMBER.replace(/\D/g,'');
+    links.forEach(function(a){
+      if(clean){ a.href = "https://zalo.me/" + clean; a.target = "_blank"; a.rel = "noopener"; }
+      else {
+        a.href = "#lien-he";
+        a.addEventListener('click', function(e){
+          if(!clean){ e.preventDefault(); alert("⚠️ Chưa cấu hình số Zalo.\nMở index.html, điền số vào dòng: var ZALO_NUMBER = \"...\";"); }
+        });
+      }
+    });
+  })();
+</script>
+</body>
+</html>
